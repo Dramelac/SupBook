@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="SupBook">
+    <output-path>$PROJECT_DIR$/out/artifacts/SupBook</output-path>
+    <root id="archive" name="SupBook.war">
+      <element id="module-output" name="supbook" />
+      <element id="library" level="module" name="junit4" module-name="supbook" />
+    </root>
+  </artifact>
+</component>
