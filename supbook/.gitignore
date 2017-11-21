@@ -1,2 +1,7 @@
 out
 !lib/*.jar
+
+.idea/dataSources.local.xml
+.idea/dataSources/
+!WebContent/WEB-INF/lib/*.jar
+build/
