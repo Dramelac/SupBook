@@ -4,6 +4,7 @@
     <root id="archive" name="SupBook.war">
       <element id="module-output" name="supbook" />
       <element id="library" level="module" name="junit4" module-name="supbook" />
+      <element id="library" level="project" name="lib" />
     </root>
   </artifact>
 </component>
