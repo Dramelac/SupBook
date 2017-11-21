@@ -1,11 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="war" build-on-make="true" name="SupBook">
+  <artifact type="exploded-war" build-on-make="true" name="SupBook">
     <output-path>$PROJECT_DIR$/out/artifacts/SupBook</output-path>
-    <root id="archive" name="SupBook.war">
-      <element id="module-output" name="supbook" />
-      <element id="library" level="module" name="junit4" module-name="supbook" />
-      <element id="library" level="project" name="lib" />
+    <root id="root">
       <element id="javaee-facet-resources" facet="supbook/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="supbook" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="module" name="junit4" module-name="supbook" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>
