@@ -15,8 +15,6 @@
         Its description :
 
     </label><input type="text" name="description">
-
-</select>
     <br><br>
     <label class="ajust_labels">
         Image url :

@@ -45,6 +45,9 @@ public class Post {
     @OneToMany(mappedBy = "post")
     private Collection<Comment> comments;
 
+    public Post() {
+    }
+
     public int getId() {
         return id;
     }
