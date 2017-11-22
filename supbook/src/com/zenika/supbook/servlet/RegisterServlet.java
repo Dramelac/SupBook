@@ -68,7 +68,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/jsp/register.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/registerForm.jsp").forward(request, response);
     }
 
     private void redirectToForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

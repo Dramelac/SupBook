@@ -6,7 +6,7 @@
 <body>
 	<table>
 		<tr>
-			<td valign="top"><jsp:include page="/private/menu.jsp" /></td>
+			<td valign="top"><jsp:include page="/jsp/menu.jsp" /></td>
 			<td valign="top">
 				<h1>BackOffice SUPBook</h1>
 			</td>
