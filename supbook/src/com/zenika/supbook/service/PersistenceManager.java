@@ -1,4 +1,4 @@
-package com.zenika.supbook.DAL;
+package com.zenika.supbook.service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

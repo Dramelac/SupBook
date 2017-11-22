@@ -1,6 +1,7 @@
 package com.zenika.supbook.DAL;
 
 import com.zenika.supbook.model.User;
+import com.zenika.supbook.service.PersistenceManager;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
