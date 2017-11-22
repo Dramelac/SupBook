@@ -12,7 +12,7 @@
 
     <c:forEach var="a" items="${list}">
         <div class="postIndex">
-            <div class="postName">${a.name}</div>
+            <div class="postName">Title</div>
             <br>
             <p>${a.description}</p><br>
             <a href="<%=request.getContextPath()%>/view?id=${a.id}" class="button_style2">View</a> |

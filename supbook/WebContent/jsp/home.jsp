@@ -66,15 +66,29 @@
 
 
 
-    <script>
-        //clear textarea
-        $('#publicationModal').on('show.bs.modal', function () {
-            $("#comment").val("")
-        })
+<script>
+    //clear textarea
+    $('#publicationModal').on('show.bs.modal', function () {
+        $("#comment").val("")
+        $("#imageUrl").val("")
+    })
 
-        $(document).on('click', '#publish', function () {
-            $("#comment").val()
+    $(document).on('click', '#publish', function () {
+        $.ajax({
+            url: '/post/submit',
+            type: 'post',
+            data: {
+                content: $("#comment").val(),
+                image: $("#imageUrl").val()
+            },
+            success: function (res) {
+                $('#publicationModal').modal('hide')
+            },
+            error: function (err) {
+                alert("Error on post saving !")
+            }
         })
+    })
 
 
     </script>
