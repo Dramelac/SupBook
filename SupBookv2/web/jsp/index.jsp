@@ -23,19 +23,17 @@
 
                 <div class="postIndex col-md-12">
                     <a href="<%=request.getContextPath()%>/view?id=${a.id}">
-                        <div class="postName">
-                            ${a.name}
-                        </div>
                         <div class="row col-md-offset-1 col-md-10">
-                            <c:if test="${not empty a.imageUrl}">
-                                <img src="${a.imageUrl}" class="imagepost">
+                            <c:if test="${not empty a.image}">
+                                <img src="${a.image}" class="imagepost">
                             </c:if>
-                            <c:if test="${empty a.imageUrl}">
+                            <c:if test="${empty a.image}">
                                 <img src="<%=request.getContextPath()%>/img/no-img.png" class="imagepost">
                             </c:if>
+                            <p>${a.content}</p>
                         </div>
                         <div class="row col-md-12">
-                            <p>Date : ${a.publishDate} </p>
+                            <p>Date : ${a.createAt} </p>
                         </div>
                         <br>
                     </a>
