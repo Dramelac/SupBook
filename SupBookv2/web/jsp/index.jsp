@@ -17,14 +17,6 @@
     </div>
 
     <div class="row">
-        <div class="filter col-md-2">
-            <p>Filter by categorie : </p>
-            <ul>
-                <c:forEach items="${categorieList}" var="option">
-                    <li class="categories"><a href="search?q=${option}">${option.name}</a></li>
-                </c:forEach>
-            </ul>
-        </div>
 
         <div class="col-md-offset-1 col-md-9">
             <c:forEach var="a" items="${list}">

@@ -2,7 +2,6 @@ package com.supinfo.supbook.servlet.post;
 
 import com.supinfo.supbook.DAL.PostDAO;
 import com.supinfo.supbook.entity.Post;
-import com.supinfo.supbook.entity.Categorie;
 import javassist.NotFoundException;
 
 import javax.servlet.ServletException;
@@ -48,7 +47,6 @@ public class UpdatePostServlet extends HttpServlet {
             response.sendError(403);
             return;
         }
-        request.setAttribute("categorieList", Categorie.CategorieList);
         request.setAttribute("post", post);
 
         request.getRequestDispatcher("/jsp/user/updatePost.jsp").forward(request, response);
