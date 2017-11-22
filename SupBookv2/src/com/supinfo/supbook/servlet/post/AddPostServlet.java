@@ -2,7 +2,6 @@ package com.supinfo.supbook.servlet.post;
 
 import com.supinfo.supbook.DAL.UserDAO;
 import com.supinfo.supbook.entity.Post;
-import com.supinfo.supbook.entity.Categorie;
 import com.supinfo.supbook.entity.User;
 
 import javax.servlet.ServletException;
@@ -30,8 +29,6 @@ public class AddPostServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("categorieList", Categorie.CategorieList);
-
         request.getRequestDispatcher("/jsp/user/addpost.jsp").forward(request, response);
     }
 }

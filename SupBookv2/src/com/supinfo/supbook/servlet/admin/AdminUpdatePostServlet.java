@@ -2,7 +2,6 @@ package com.supinfo.supbook.servlet.admin;
 
 import com.supinfo.supbook.DAL.PostDAO;
 import com.supinfo.supbook.entity.Post;
-import com.supinfo.supbook.entity.Categorie;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +26,6 @@ public class AdminUpdatePostServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Post post = null;
         post = PostDAO.getPostById(Integer.parseInt(request.getParameter("id")));
-        request.setAttribute("categorieList", Categorie.CategorieList);
         request.setAttribute("post", post);
         request.getRequestDispatcher("/jsp/user/updatePost.jsp").forward(request, response);
     }
