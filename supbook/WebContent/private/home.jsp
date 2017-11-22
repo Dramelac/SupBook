@@ -9,9 +9,15 @@
 		<tr>
 			<td valign="top"><jsp:include page="/private/menu.jsp" /></td>
 			<td valign="top">
-				<h1>BackOffice SUPBook</h1>
-			</td>
-		</tr>
-	</table>
+			<h1>BackOffice SUPBook</h1>
+		</td>
+		<td>
+			<form action="${pageContext.request.contextPath}/HomeServlet" method="post">
+				<textarea rows="1" cols="50" title="SearchBar">Search FirstName, LastName </textarea>
+				<button type="button">Search</button>
+			</form>
+		</td>
+	</tr>
+</table>
 </body>
 </html>
