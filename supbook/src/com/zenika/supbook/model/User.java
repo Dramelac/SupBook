@@ -23,8 +23,11 @@ public class User implements Serializable{
 	@Column(unique=false)
 	private boolean isAdmin;
 
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "userOwner")
 	private Collection<Post> posts;
+
+	@OneToMany(mappedBy = "userPage")
+	private Collection<Post> postsPage;
 
 	public User() {
 	}

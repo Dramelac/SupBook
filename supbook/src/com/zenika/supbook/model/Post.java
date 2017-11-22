@@ -1,10 +1,8 @@
 package com.zenika.supbook.model;
 
 import com.sun.istack.internal.NotNull;
-import javafx.geometry.Pos;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -27,5 +25,10 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "userID")
     @NotNull
-    private User user;
+    private User userOwner;
+
+    @ManyToOne
+    @JoinColumn(name = "pageID")
+    @NotNull
+    private User userPage;
 }
