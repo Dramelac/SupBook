@@ -50,26 +50,23 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-				<button type="button" class="btn btn-primary"onClick="history.go(0)" VALUE="Refresh">Publier</button>
+				<button id="publish" type="button" class="btn btn-primary"onClick="history.go(0)" VALUE="Refresh">Publier</button>
 			</div>
 		</div>
 	</div>
-</div>
-<div class="modal-footer" id="mur">
-	<textarea id="texte"></textarea>
-
-	<input type="submit" value="Tester !" onclick="javascript:emule(document.getElementById('texte').value);" />
 </div>
 
 
 <script>
 
 	//reload textarea
-	$('#myModal').on('comment.bs.modal', function (e) {
-		if (!data) return e.preventDefault() // stops modal from being shown
-		else
-		{
+	$('#publish').click(function() {
+		//if (!data) return e.preventDefault() // stops modal from being shown
+		//else
+			var toto = $('#comment').val();
+			console.log(toto);
+			$('#comment').val("");
+			$("texte").html($(toto));
+	});
 
-		}
-	})
 </script>
