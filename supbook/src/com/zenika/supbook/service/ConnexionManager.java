@@ -33,7 +33,7 @@ public class ConnexionManager {
 	private static Connection openConnection() {
 		try {
 			Connection connection = DriverManager
-					.getConnection("jdbc:mysql://localhost:3306/supbook", "supbook", "fakepassword");
+					.getConnection("jdbc:mysql://10.31.18.177:3306/supbook", "supbook", "fakepassword");
 			connection.setAutoCommit(false);
 			return connection;
 			
