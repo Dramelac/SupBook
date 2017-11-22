@@ -1,4 +1,3 @@
-<jsp:include page="/private/checkSecurity.jsp" />
 <html>
 <head>
 <title>SUPbook : the online student directory</title>
