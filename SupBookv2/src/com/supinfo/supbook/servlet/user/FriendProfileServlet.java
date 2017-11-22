@@ -11,6 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "FriendProfileServlet", urlPatterns = "/user/friendProfile")
 public class FriendProfileServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException;
 
 }
