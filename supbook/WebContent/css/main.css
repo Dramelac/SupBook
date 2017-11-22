@@ -10,3 +10,56 @@ h1 {
 p, a, body {
 	font-family: Helvetica,Arial,Verdana,sans-serif;
 }
+
+.container-fluid {
+    height: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-md-2{
+    padding-right: 0%;
+    padding-left: 0%;
+}
+
+.col-md-8{
+    padding-right: 0%;
+    padding-left: 0%;
+}
+
+
+.col-md-12{
+    padding-right: 0%;
+    padding-left: 0%;
+}
+
+.row{
+    margin: 0%;
+}
+
+.header{
+    height: 70px;
+    background-color: #99D9EA;
+    border-bottom:black 1px solid ;
+}
+
+.contenu{
+    height: calc(100% - 70px);
+    background-color: #E0E0E0;
+}
+
+.liste_ami{
+    height: 100%;
+    border-right: black 1px solid;
+}
+
+.titre_liste_ami{
+    background-color: #99D9EA ;
+    border-bottom:black 1px solid ;
+}
+
+.suggestion{
+    border-left: black 1px solid;
+}
