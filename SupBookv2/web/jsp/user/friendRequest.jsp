@@ -16,8 +16,8 @@
         <div class="friendRquestIndex">
 
             <p>Name : ${a.owner.username} </p>
-            <p><a href="<%=request.getContextPath()%>/acceptfriend" class="button_style2">Accept </a></p>
-            <p><a href="<%=request.getContextPath()%>/denyfriend" class="button_style2">Deny</a></p>
+            <p><a href="<%=request.getContextPath()%>/acceptfriend?id=${a.id}" class="button_style2">Accept</a></p>
+            <p><a href="<%=request.getContextPath()%>/denyfriend?id=${a.id}" class="button_style2">Deny</a></p>
 
         </div>
         </c:forEach>
