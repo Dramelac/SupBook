@@ -33,7 +33,7 @@
 <body>
 	<table>
 		<tr>
-			<td valign="top">
+			<td align="top">
 			<h1>BackOffice SUPBook</h1>
 		</td>
 		<td>
@@ -51,17 +51,17 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#publicationModal">
 	Publier
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="publicationModal" tabindex="-1" role="dialog" aria-labelledby="publicationModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Publication</h4>
+				<h4 class="modal-title" id="publicationModalLabel">Publication</h4>
 			</div>
 			<!--intégration fichier -->
 			<div class="form-group">
@@ -73,7 +73,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-				<button id="publish" type="button" class="btn btn-primary"onClick="history.go(0)" VALUE="Refresh">Publier</button>
+				<button id="publish" type="button" class="btn btn-primary">Publier</button>
 			</div>
 		</div>
 	</div>
@@ -83,14 +83,13 @@
 
 <script>
 
-	//reload textarea
-	$('#publish').click(function() {
-		//if (!data) return e.preventDefault() // stops modal from being shown
-		//else
-			var toto = $('#comment').val();
-			console.log(toto);
-			$('#comment').val("");
-			$("texte").html($(toto));
-	});
+	//clear textarea
+    $('#publicationModal').on('show.bs.modal', function () {
+        $("#comment").val("")
+    })
+
+    $(document).on('click', '#publish', function () {
+        $("#comment").val()
+    })
 
 </script>

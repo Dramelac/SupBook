@@ -5,5 +5,10 @@
 </head>
 <body>
     <p>friend request</p>
+
+    <form action="/friend" method="POST">
+        <input type="submit" value="test">
+    </form>
+
 </body>
 </html>
