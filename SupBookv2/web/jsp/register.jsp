@@ -23,7 +23,13 @@
                 <label class="labels_register">
                     E-mail <span class="mandatory">*</span>
 
-                </label> <br><input type="text" name="email" class="inputs_register" value="${email}"">
+                </label> <br><input type="text" name="email" class="inputs_register" value="${email}">
+                <br>
+
+                <label class="labels_register">
+                   BirthDay <span class="mandatory">*</span>
+
+                </label> <br><input type="date" name="birthday" class="inputs_register" value="${birthday}">
                 <br>
 
                 <label class="labels_register">

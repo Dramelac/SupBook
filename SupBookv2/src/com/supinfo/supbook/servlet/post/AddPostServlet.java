@@ -20,7 +20,7 @@ public class AddPostServlet extends HttpServlet {
         User user = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
         Post post = new Post();
         post.setImage(request.getParameter("image"));
-        post.setContent(request.getParameter("description"));
+        post.setContent(request.getParameter(" content"));
         post.setCreateAt(new Date());
         post.setUserPage(user);
         post.setUserOwner(user);
