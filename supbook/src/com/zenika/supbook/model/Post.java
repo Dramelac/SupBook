@@ -25,7 +25,12 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "userID")
     @NotNull
-    private User user;
+    private User userOwner;
+
+    @ManyToOne
+    @JoinColumn(name = "pageID")
+    @NotNull
+    private User userPage;
 
     public int getId() {
         return id;
@@ -59,12 +64,19 @@ public class Post {
         this.createAt = createAt;
     }
 
-    public User getUser() {
-        return user;
+    public User getUserOwner() {
+        return userOwner;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserOwner(User userOwner) {
+        this.userOwner = userOwner;
+    }
 
+    public User getUserPage() {
+        return userPage;
+    }
+
+    public void setUserPage(User userPage) {
+        this.userPage = userPage;
     }
 }
