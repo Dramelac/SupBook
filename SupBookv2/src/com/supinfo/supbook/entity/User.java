@@ -103,4 +103,16 @@ public class User implements Serializable{
     public void setPostsPage(Collection<Post> postsPage) {
         this.postsPage = postsPage;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Collection<Comment> comments) {
+        this.comments = comments;
+    }
 }

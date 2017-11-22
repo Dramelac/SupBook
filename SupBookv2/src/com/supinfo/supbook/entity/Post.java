@@ -27,7 +27,7 @@ public class Post {
     private Date createAt;
 
     @Column
-    private int like;
+    private int likeCount;
 
     @Column
     private int dislike;
@@ -91,5 +91,29 @@ public class Post {
 
     public void setUserPage(User userPage) {
         this.userPage = userPage;
+    }
+
+    public int getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public int getDislike() {
+        return dislike;
+    }
+
+    public void setDislike(int dislike) {
+        this.dislike = dislike;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Collection<Comment> comments) {
+        this.comments = comments;
     }
 }
