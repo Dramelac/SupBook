@@ -20,6 +20,10 @@ public class IndexServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getSession().getAttribute("userId") == null){
+            response.sendRedirect("/login");
+            return;
+        }
         request.setAttribute("userCount", UserDAO.getUserCount());
         request.setAttribute("postCount", PostDAO.getPostCount());
         User user = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
