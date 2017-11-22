@@ -28,14 +28,8 @@ public class UpdatePostServlet extends HttpServlet {
             response.sendError(403);
             return;
         }
-        post.setName(request.getParameter("postname"));
-        post.setImageUrl(request.getParameter("image"));
-        post.setDescription(request.getParameter("description"));
-        String cat = request.getParameter("categorie");
-        if (!cat.isEmpty()){
-            post.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
-        }
-        post.setPrice(Double.parseDouble(request.getParameter("price")));
+        post.setImage(request.getParameter("image"));
+        post.setContent(request.getParameter("description"));
         PostDAO.updatePost(post);
 
         response.sendRedirect(request.getContextPath() + "/view?id=" + id);

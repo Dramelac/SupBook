@@ -1,7 +1,5 @@
 package com.supinfo.supbook.DAL;
 import com.supinfo.supbook.entity.Post;
-import com.supinfo.supbook.entity.Categorie;
-import com.supinfo.supbook.entity.User;
 import com.supinfo.supbook.utils.PersistenceManager;
 import javassist.NotFoundException;
 
@@ -24,14 +22,14 @@ public class PostDAO {
 
     public static List<Post> getAllPostsOrderByPublishDate(){
         EntityManager em = PersistenceManager.getEntityManager();
-        Query  query = em.createQuery("SELECT a FROM Post a ORDER BY a.publishDate DESC ");
+        Query  query = em.createQuery("SELECT a FROM Post a ORDER BY a.createAt DESC ");
         List<Post> posts = (List<Post>)query.getResultList();
         return posts;
     }
 
     public static List<Post> getTenPostsOrderByPublishDate(){
         EntityManager em = PersistenceManager.getEntityManager();
-        Query  query = em.createQuery("SELECT  a FROM Post a ORDER BY a.publishDate DESC");
+        Query  query = em.createQuery("SELECT  a FROM Post a ORDER BY a.createAt DESC");
         query.setMaxResults(10);
         List<Post> posts = (List<Post>)query.getResultList();
         return posts;
@@ -62,23 +60,10 @@ public class PostDAO {
         Post post = PostDAO.getPostById(id);
         if (post == null){
             throw new NotFoundException("Post no found");
-        } else if (post.getOwner().getId() != userID){
+        } else if (post.getUserOwner().getId() != userID){
             throw new IllegalAccessException("You dont have access to this post");
         }
         return post;
     }
 
-    public static List<Post> searchFullText(String txt){
-        EntityManager em = PersistenceManager.getEntityManager();
-        Query  query = em.createQuery("SELECT a FROM Post a where a.name LIKE :txt OR a.description LIKE :txt OR a.owner.username LIKE :txt");
-        query.setParameter("txt","%"+txt+"%");
-        return (List<Post>)query.getResultList();
-    }
-
-    public static List<Post> searchByCategorie(Categorie search){
-        EntityManager em = PersistenceManager.getEntityManager();
-        Query  query = em.createQuery("SELECT a FROM Post a where a.categorie = :filter");
-        query.setParameter("filter", search);
-        return (List<Post>)query.getResultList();
-    }
 }

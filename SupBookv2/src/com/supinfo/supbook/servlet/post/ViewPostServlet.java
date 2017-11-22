@@ -22,7 +22,7 @@ public class ViewPostServlet extends HttpServlet {
                 Post post = PostDAO.getPostById(Integer.parseInt(request.getParameter("id")));
 
                 User senderuser = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
-                String recipient = post.getOwner().getEmail();
+                String recipient = post.getUserOwner().getEmail();
                 String subject = senderuser.getEmail() + " from SupBook sent you a message";
                 String content = request.getParameter("email_content");
 
@@ -49,11 +49,11 @@ public class ViewPostServlet extends HttpServlet {
                 throw new NotFoundException("Post no found");
             }
             Object userId = request.getSession().getAttribute("userId");
-            if (userId != null && userId.equals(post.getOwner().getId())){
+            if (userId != null && userId.equals(post.getUserOwner().getId())){
                 request.setAttribute("isOwner", true);
             }
             request.setAttribute("post", post);
-            request.setAttribute("owner", post.getOwner());
+            request.setAttribute("owner", post.getUserOwner());
             request.getRequestDispatcher("/jsp/viewPost.jsp").forward(request, response);
         } catch (Exception e){
             response.sendError(404);
