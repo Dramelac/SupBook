@@ -14,8 +14,9 @@
 		</td>
 		<td>
 			<form action="${pageContext.request.contextPath}/HomeServlet" method="post">
-				<textarea rows="1" cols="50" title="SearchBar">Search FirstName, LastName </textarea>
-				<button type="button">Search</button>
+				<textarea rows="1" cols="50" title="SearchBar" name ="inputText">Search FirstName, LastName </textarea>
+				<%= request.getParameter("inputText")%>
+				<button type="submit" name="button" value="buttonSearch">Button 1</button>
 			</form>
 		</td>
 		<a href="<%= request.getContextPath() %>/user/logout">Logout</a><br>
