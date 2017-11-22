@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/private/loginForm.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/loginForm.jsp").forward(request, response);
 
     }
 }

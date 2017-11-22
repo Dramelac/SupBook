@@ -46,7 +46,7 @@ public class PostDAO {
 
     public static long getPostCountUser(User user) {
         EntityManager em = PersistenceManager.getEntityManager();
-        Query query = em.createQuery("SELECT count(*) FROM Post p WHERE p.user = :user");
+        Query query = em.createQuery("SELECT count(*) FROM Post p WHERE p.userOwner = :user");
         query.setParameter("user",user);
         return (long) query.getSingleResult();
     }
@@ -57,9 +57,11 @@ public class PostDAO {
         return (List<Post>) query.getResultList();
     }
 
-    public static  List<Post> getPostByPageId(){
+    public static  List<Post> getPostByPageId(User page){
         EntityManager em = PersistenceManager.getEntityManager();
-        return null/*(List<Post>) query.getResultList()*/;
+        Query query = em.createQuery("SELECT * FROM Post p WHERE p.userPage = :page");
+        query.setParameter("page", page);
+        return (List<Post>) query.getResultList();
     }
 
 }

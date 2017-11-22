@@ -68,14 +68,10 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/jsp/register.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/registerForm.jsp").forward(request, response);
     }
 
     private void redirectToForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("firstname", request.getParameter("firstname"));
-        request.setAttribute("lastname", request.getParameter("lastname"));
-        request.setAttribute("address", request.getParameter("address"));
-        request.setAttribute("phonenumber", request.getParameter("phonenumber"));
         request.setAttribute("username", request.getParameter("username"));
         request.setAttribute("email", request.getParameter("email"));
         doGet(request, response);

@@ -16,7 +16,7 @@ public class HomeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("userId") != null) {
-            request.getRequestDispatcher("/private/home.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/home.jsp").forward(request, response);
         }
         else {
             response.sendRedirect(request.getContextPath() + "/login");
