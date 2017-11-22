@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
 
 
@@ -22,8 +25,9 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordverif = request.getParameter("passwordverif");
+        String birthday = request.getParameter("birthdate");
 
-        if (username.isEmpty() || password.isEmpty() || passwordverif.isEmpty() || email.isEmpty()){
+        if (username.isEmpty() || password.isEmpty() || passwordverif.isEmpty() || email.isEmpty() || birthday.isEmpty()){
             request.setAttribute("failed", true);
             request.setAttribute("message", "Required field is missing.");
             redirectToForm(request, response);
@@ -48,9 +52,20 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
+
         User user = new User();
         user.setEmail(email);
         user.setUsername(username);
+
+        final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        try{
+            final Date date = dateFormat.parse(birthday);
+            user.setBirthday(date);
+        }catch (ParseException e){
+            e.getMessage();
+        }
+
 
         user.setPassword(SecurityUtils.getHashfromPassword(password));
 

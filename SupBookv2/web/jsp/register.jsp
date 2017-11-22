@@ -27,6 +27,12 @@
                 <br>
 
                 <label class="labels_register">
+                   BirthDay <span class="mandatory">*</span>
+
+                </label> <br><input type="date" name="email" class="inputs_register" value="${email}"">
+                <br>
+
+                <label class="labels_register">
                     Username <span class="mandatory">*</span>
 
                 </label> <br><input type="text" name="username" class="inputs_register" value="${username}">
