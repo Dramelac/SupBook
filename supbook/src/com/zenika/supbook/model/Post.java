@@ -3,6 +3,7 @@ package com.zenika.supbook.model;
 import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -31,6 +32,9 @@ public class Post {
     @JoinColumn(name = "pageID")
     @NotNull
     private User userPage;
+
+    @OneToMany(mappedBy = "post")
+    private Collection<Comment> comments;
 
     public int getId() {
         return id;

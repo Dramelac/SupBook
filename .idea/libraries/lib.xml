@@ -1,0 +1,49 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/supbook/lib/dsn.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/jstl-impl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/javax.jms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/javax.resource.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/pop3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/imap.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/commons-logging-adapters-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/jta-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/jstl-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/commons-logging-api-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/jbcrypt-0.3m.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/mailapi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/slf4j-jdk14-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/el-api-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/classmate-1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/jandex-2.0.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/javax.persistence.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/mysql-connector-java-5.1.34-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/commons-collections-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/javax.servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/javax.ejb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/slf4j-api-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/smtp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/antlr-2.7.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/jboss-logging-3.3.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/gimap.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/geronimo-jta_1.1_spec-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/hibernate-commons-annotations-5.0.1.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/cdi-api-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/hibernate-core-5.2.3.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/supbook/lib/jsr250-api-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

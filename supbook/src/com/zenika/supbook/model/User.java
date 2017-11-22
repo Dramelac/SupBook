@@ -29,6 +29,9 @@ public class User implements Serializable{
 	@OneToMany(mappedBy = "userPage")
 	private Collection<Post> postsPage;
 
+	@OneToMany(mappedBy = "owner")
+	private Collection<Comment> comments;
+
 	public User() {
 	}
 
