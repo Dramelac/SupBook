@@ -1,5 +1,6 @@
 package com.supinfo.supbook.DAL;
 import com.supinfo.supbook.entity.Post;
+import com.supinfo.supbook.entity.User;
 import com.supinfo.supbook.utils.PersistenceManager;
 import javassist.NotFoundException;
 
@@ -7,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostDAO {
@@ -41,6 +43,18 @@ public class PostDAO {
         Query  query = em.createQuery("SELECT  a FROM Post a ORDER BY a.createAt DESC");
         query.setMaxResults(10);
         List<Post> posts = (List<Post>)query.getResultList();
+        return posts;
+    }
+
+    public static List<Post> getFriendPostsOrderByPublishDate(List<User> userList){
+        EntityManager em = PersistenceManager.getEntityManager();
+        List<Post> posts = new ArrayList<>();
+        Query  query = em.createQuery("SELECT  a FROM Post a WHERE a.userPage = :user ORDER BY a.createAt DESC");
+        query.setMaxResults(10);
+        for (User anUserList : userList) {
+            query.setParameter("user", anUserList);
+            posts.addAll((List<Post>)query.getResultList());
+        }
         return posts;
     }
 
