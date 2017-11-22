@@ -15,7 +15,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String username = request.getParameter("username");
+        String username = request.getParameter("login");
         User user = UserDAO.getUserByName(username);
 
         if (user != null && SecurityUtils.checkPassword(request.getParameter("password"), user.getPassword())){
@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/private/loginForm.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/loginForm.jsp").forward(request, response);
 
     }
 }

@@ -40,6 +40,8 @@
       <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.6.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/slf4j-jdk14-1.6.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/smtp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jboss-logging-3.3.0.Final.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
