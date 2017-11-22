@@ -12,9 +12,9 @@
 <br>
 <form action="addpost" method="POST">
     <label class="ajust_labels">
-        Its description :
+        Its  content :
 
-    </label><input type="text" name="description">
+    </label><input type="text" name=" content">
     <br><br>
     <label class="ajust_labels">
         Image url :
