@@ -12,9 +12,9 @@
 
     <c:forEach var="a" items="${list}">
         <div class="postIndex">
-            <div class="postName">Title</div>
+            <div class="postName">${a.createAt}</div>
             <br>
-            <p>${a.description}</p><br>
+            <p>${a.content}</p><br>
             <a href="<%=request.getContextPath()%>/view?id=${a.id}" class="button_style2">View</a> |
             <a href="<%=request.getContextPath()%>/user/updatepost?id=${a.id}" class="button_style2">Edit</a> |
             <a href="<%=request.getContextPath()%>/user/removepost?id=${a.id}" class="button_style2">Remove</a><br>

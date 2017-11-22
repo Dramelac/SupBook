@@ -13,19 +13,14 @@
 <form action="updatepost" method="POST">
     <input type="hidden" name="id" value="${post.id}">
     <label class="ajust_labels">
-        Its description :
+        Its  content :
 
-    </label> <input type="text" name="description" value="${post.description}">
+    </label> <input type="text" name=" content" value="${post.content}">
     <br><br>
     <label class="ajust_labels">
         Image url :
 
-    </label> <input type="text" name="image" value="${post.imageUrl}">
-    <br><br>
-    <label class="ajust_labels">
-        Its price :
-
-    </label> <input type="text" name="price" value="${post.price}">
+    </label> <input type="text" name="image" value="${post.image}">
     <br><br>
     <input type="submit" value="Update post" class="button">
 </form>

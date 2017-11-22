@@ -39,11 +39,11 @@ public class User implements Serializable{
     public User() {
     }
 
-    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber, boolean isAdmin) {
+    public User(String username, String password, String email, boolean isAdmin) {
         this.username = username;
         this.password = password;
         this.email = email;
-        this.isAdmin = false;
+        this.isAdmin = isAdmin;
     }
 
     public int getId() {

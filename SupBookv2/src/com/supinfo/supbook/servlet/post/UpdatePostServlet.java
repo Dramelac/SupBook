@@ -28,7 +28,7 @@ public class UpdatePostServlet extends HttpServlet {
             return;
         }
         post.setImage(request.getParameter("image"));
-        post.setContent(request.getParameter("description"));
+        post.setContent(request.getParameter(" content"));
         PostDAO.updatePost(post);
 
         response.sendRedirect(request.getContextPath() + "/view?id=" + id);
