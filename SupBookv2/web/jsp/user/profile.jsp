@@ -48,6 +48,10 @@
         <input type="submit" value="Update" class="button">
 
     </form>
+    <label class="switch">
+        <input type="checkbox" checked="true">
+        <span class="slider round"></span>
+    </label>
 </div>
 
 <%@ include file="../include/javascript.jsp" %>
