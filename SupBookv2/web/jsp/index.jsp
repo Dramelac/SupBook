@@ -12,7 +12,7 @@
     <div class="text_index row">
         <img src="<c:url value="/img/logo.png" />" class="col-md-2 logo"/>
         <div class="col-md-offset-1 col-md-8">
-            <p>Actualy they are ${userCount} users and ${postCount} ads online !</p>
+            <p>Actualy they are ${userCount} users and ${postCount} message online !</p>
         </div>
     </div>
 
