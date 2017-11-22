@@ -1,6 +1,7 @@
 package com.supinfo.supbook.DAL;
 
 import com.supinfo.supbook.entity.FriendRequest;
+import com.supinfo.supbook.entity.User;
 import com.supinfo.supbook.utils.PersistenceManager;
 
 import javax.persistence.EntityManager;
@@ -32,10 +33,11 @@ public class FriendRequestDAO {
         return em.find(FriendRequest.class, id);
     }
 
-    public static List<FriendRequest> getRequestByReceiverID(int id) {
+    public static List<FriendRequest> getRequestByReceiverID(User user) {
         EntityManager em = PersistenceManager.getEntityManager();
-        String querystr = "SELECT f FROM FriendRequest f WHERE f.ReceiverID = "+ id +")";
-        Query query = em.createQuery(querystr);
+        Query query = em.createQuery("SELECT f FROM FriendRequest f WHERE f.receiver = :user");
+        query.setParameter("user", user);
+
         return (List<FriendRequest>) query.getResultList();
     }
 
