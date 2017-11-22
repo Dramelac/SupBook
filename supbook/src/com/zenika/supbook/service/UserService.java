@@ -26,7 +26,7 @@ public class UserService {
 
 			cx.commit();
 
-			user.setId(generatedId);
+			//user.setId(generatedId);
 			return user;
 
 		} catch (Exception e) {
@@ -132,10 +132,10 @@ public class UserService {
 	}
 	
 	private User buildFromResultSet(ResultSet rs) throws SQLException {
-		User result = new User();
+		/*User result = new User();
 		result.setId(rs.getLong("ID"));
 		result.setLogin(rs.getString("LOGIN"));
-		result.setEmail(rs.getString("EMAIL"));
-		return result;
+		result.setEmail(rs.getString("EMAIL"));*/
+		return null;
 	}
 }
