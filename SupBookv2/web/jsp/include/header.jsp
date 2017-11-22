@@ -30,6 +30,7 @@
                     <li><a href="<%=request.getContextPath()%>/login"><p class="buttons_header">Login</p></a></li>
                 </c:if>
                 <c:if test="${not empty username}">
+                    <li><a href="<%=request.getContextPath()%>/friend"><p class="buttons_header">Friends request list</p></a></li>
                     <li><a href="<%=request.getContextPath()%>/user/profile"><p class="buttons_header">Profile</p></a></li>
                     <li><a href="<%=request.getContextPath()%>/user/logout"><p class="buttons_header">Logout</p></a></li>
                 </c:if>

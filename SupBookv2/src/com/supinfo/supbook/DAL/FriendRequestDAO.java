@@ -35,7 +35,7 @@ public class FriendRequestDAO {
 
     public static List<FriendRequest> getRequestByReceiverID(User user) {
         EntityManager em = PersistenceManager.getEntityManager();
-        Query query = em.createQuery("SELECT f FROM FriendRequest f WHERE f.receiver = :user");
+        Query query = em.createQuery("SELECT f FROM FriendRequest f WHERE f.receiver = :user and status = false ");
         query.setParameter("user", user);
 
         return (List<FriendRequest>) query.getResultList();
