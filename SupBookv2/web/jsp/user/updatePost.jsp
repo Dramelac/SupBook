@@ -13,26 +13,9 @@
 <form action="updatepost" method="POST">
     <input type="hidden" name="id" value="${post.id}">
     <label class="ajust_labels">
-        Name of product :
-
-    </label> <input type="text" name="postname" value="${post.name}">
-    <br><br>
-    <label class="ajust_labels">
         Its description :
 
     </label> <input type="text" name="description" value="${post.description}">
-    <br><br>
-    <label class="ajust_labels">
-        Categorie :
-    </label>
-    <select name="categorie">
-        <option value=""></option>
-        <c:forEach items="${categorieList}" var="option">
-            <option value="${option}">
-                <c:out value="${option.name}"></c:out>
-            </option>
-        </c:forEach>
-    </select>
     <br><br>
     <label class="ajust_labels">
         Image url :

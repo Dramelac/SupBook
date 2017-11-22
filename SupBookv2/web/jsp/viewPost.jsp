@@ -8,7 +8,7 @@
 <%@ include file="include/header.jsp" %>
 <div class="container">
     <div class="postIndex">
-        <h1 class="postName large">${post.name} </h1>
+        <h1 class="postName large">Title</h1>
 
         <div class="row">
             <div class="col-md-offset-1 col-md-7">
@@ -20,9 +20,7 @@
                 </c:if>
             </div>
             <div class="col-md-offset-1 col-md-3">
-                <p>Categorie : ${post.categorie} </p>
                 <p>Posted by ${owner.username} at ${post.publishDate}</p>
-                <p>Price : ${post.price}€</p>
             </div>
         </div>
 
