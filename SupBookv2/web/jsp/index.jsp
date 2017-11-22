@@ -12,7 +12,7 @@
     <div class="text_index row">
         <img src="<c:url value="/img/logo.png" />" class="col-md-2 logo"/>
         <div class="col-md-offset-1 col-md-8">
-            <p>Actualy they are ${userCount} users and ${postCount} message online !</p>
+            <p>Actualy they are ${userCount} users and ${postCount} posts créés !</p>
         </div>
     </div>
 
@@ -22,22 +22,27 @@
             <c:forEach var="a" items="${list}">
 
                 <div class="postIndex col-md-12">
-                    <a href="<%=request.getContextPath()%>/view?id=${a.id}">
-                        <div class="row col-md-offset-1 col-md-10">
-                            <c:if test="${not empty a.image}">
-                                <img src="${a.image}" class="imagepost">
-                            </c:if>
-                            <c:if test="${empty a.image}">
-                                <img src="<%=request.getContextPath()%>/img/no-img.png" class="imagepost">
-                            </c:if>
-                            <p>${a.content}</p>
-                        </div>
+                    <div class="row col-md-offset-1 col-md-10">
+                        <c:if test="${not empty a.image}">
+                            <img src="${a.image}" class="imagepost">
+                        </c:if>
+                        <c:if test="${empty a.image}">
+                            <img src="<%=request.getContextPath()%>/img/no-img.png" class="imagepost">
+                        </c:if>
+                        <p>${a.content}</p>
+                    </div>
+                    <div class="row col-md-12">
+                        <p>Date : ${a.createAt} </p>
+                    </div>
+                    <c:if test="${not empty username}">
                         <div class="row col-md-12">
-                            <p>Date : ${a.createAt} </p>
+                            <form class="commentForm">
+                                <input type="hidden" name="postId" value="${a.id}">
+                                <input style="width:100%" type="text"  name="comment" placeholder="Write a comment.." required>
+                            </form>
                         </div>
-                        <br>
-                    </a>
-
+                    </c:if>
+                    <br>
                 </div>
             </c:forEach>
         </div>
@@ -45,5 +50,27 @@
 </div>
 
 <%@ include file="include/javascript.jsp" %>
+<script>
+    $(document).on('submit', '.commentForm', function (e) {
+        e.preventDefault();
+        var form = $(this);
+        $.ajax({
+            url: "/comment/add",
+            type: "post",
+            data: {
+                comment: form.find("input[name=comment]").val(),
+                postId: form.find("input[name=postId]").val()
+            },
+            success: function () {
+                form.find("input[name=comment]").val("")
+            },
+            error: function () {
+                alert("Error when sending comment !")
+            }
+        });
+    });
+
+
+</script>
 </body>
 </html>
