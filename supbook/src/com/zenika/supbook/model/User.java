@@ -2,6 +2,7 @@ package com.zenika.supbook.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
 
 @Entity
 public class User implements Serializable{
@@ -21,6 +22,9 @@ public class User implements Serializable{
 
 	@Column(unique=false)
 	private boolean isAdmin;
+
+	@OneToMany(mappedBy = "user")
+	private Collection<Post> posts;
 
 	public User() {
 	}
