@@ -24,7 +24,7 @@ public class Post {
     @Column
     private Date createAt;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "userID")
     @NotNull
     private User user;
