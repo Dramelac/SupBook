@@ -21,34 +21,17 @@
             </c:if>
             <form action="register" method="POST" class="login">
                 <label class="labels_register">
-                    First name
-
-                </label>
-                <br>
-                <input type="text" name="firstname" class="inputs_register" value="${firstname}">
-                <br>
-                <label class="labels_register">
-                    Last name
-                </label>
-                <br>
-                <input type="text" name="lastname" class="inputs_register" value="${lastname}">
-
-                <br>
-                <label class="labels_register">
                     E-mail <span class="mandatory">*</span>
 
                 </label> <br><input type="text" name="email" class="inputs_register" value="${email}"">
                 <br>
-                <label class="labels_register">
-                    Address
 
-                </label> <br><input type="text" name="address" class="inputs_register" value="${address}">
-                <br>
                 <label class="labels_register">
-                    Phone number
+                   BirthDay <span class="mandatory">*</span>
 
-                </label> <br><input type="text" name="phonenumber" class="inputs_register" value="${phonenumber}">
+                </label> <br><input type="date" name="email" class="inputs_register" value="${email}"">
                 <br>
+
                 <label class="labels_register">
                     Username <span class="mandatory">*</span>
 

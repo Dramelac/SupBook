@@ -12,36 +12,13 @@
 <br>
 <form action="addpost" method="POST">
     <label class="ajust_labels">
-        Name of product :
+        Its  content :
 
-    </label> <input type="text" name="postname">
-    <br><br>
-    <label class="ajust_labels">
-        Its description :
-
-    </label><input type="text" name="description">
-    <br><br>
-    <label class="ajust_labels">
-        Categorie :
-
-    </label><select name="categorie">
-    <option value=""></option>
-    <c:forEach items="${categorieList}" var="option">
-        <option value="${option}">
-            <c:out value="${option.name}"></c:out>
-        </option>
-    </c:forEach>
-</select>
+    </label><input type="text" name=" content">
     <br><br>
     <label class="ajust_labels">
         Image url :
     </label> <input type="text" name="image">
-    <br><br>
-    <label class="ajust_labels">
-        Its price :
-
-    </label> <input type="text" name="price">
-        €
     <br><br>
     <input type="submit" value="Add post" class="button">
 </form>

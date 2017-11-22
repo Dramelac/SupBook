@@ -8,26 +8,24 @@
 <%@ include file="include/header.jsp" %>
 <div class="container">
     <div class="postIndex">
-        <h1 class="postName large">${post.name} </h1>
+        <h1 class="postName large">Title</h1>
 
         <div class="row">
             <div class="col-md-offset-1 col-md-7">
-                <c:if test="${not empty post.imageUrl}">
-                    <img src="${post.imageUrl}" class="imagepost">
+                <c:if test="${not empty post.image}">
+                    <img src="${post.image}" class="imagepost">
                 </c:if>
-                <c:if test="${empty post.imageUrl}">
+                <c:if test="${empty post.image}">
                     <img src="<%=request.getContextPath()%>/img/no-img.png" class="imagepost">
                 </c:if>
             </div>
             <div class="col-md-offset-1 col-md-3">
-                <p>Categorie : ${post.categorie} </p>
-                <p>Posted by ${owner.username} at ${post.publishDate}</p>
-                <p>Price : ${post.price}€</p>
+                <p>Posted by ${owner.username} at ${post.createAt}</p>
             </div>
         </div>
 
         <div class="row col-md-offset-1">
-            <p>${post.description}</p>
+            <p>${post.content}</p>
         </div>
 
         <br>
@@ -44,11 +42,6 @@
         <c:if test="${(!isOwner) and (not empty username) }">
             <form name="contact_form" method="POST">
                 <p>You can contact ${owner.username} here :</p>
-                <c:if test="${not empty owner.phonenumber}">
-                    <label>
-                        Telephone number of the owner: ${owner.phonenumber}
-                    </label><br>
-                </c:if>
                 <label>
                     E-mail of the owner: ${owner.email}
                 </label><br><br>

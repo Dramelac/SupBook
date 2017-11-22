@@ -18,11 +18,10 @@
 
     <c:forEach var="a" items="${postList}">
     <div class="postIndex">
-        <p>Name : ${a.name} </p>
-        <p>Price : ${a.price} €</p>
-        <p>Date : ${a.publishDate} </p>
-        <c:if test="${not empty a.imageUrl}">
-            <img src="${a.imageUrl}" class="imagepost">
+        <p>Name : ${a.content} </p>
+        <p>Date : ${a.createAt} </p>
+        <c:if test="${not empty a.image}">
+            <img src="${a.image}" class="imagepost">
         </c:if>
         <br>
 

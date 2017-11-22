@@ -17,7 +17,7 @@ public class AdminUpdatePostServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         post = PostDAO.getPostById(Integer.parseInt(request.getParameter("id")));
         post.setImage(request.getParameter("image"));
-        post.setContent(request.getParameter("description"));
+        post.setContent(request.getParameter(" content"));
         PostDAO.updatePost(post);
 
         response.sendRedirect(request.getContextPath() + "/admin/post");

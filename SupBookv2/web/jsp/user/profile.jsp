@@ -27,31 +27,7 @@
     </c:if>
 
     <form action="profile" method="POST">
-        <label class="ajust_labels">
-            First name :
-
-        </label> <input type="text" name="firstname" value="${user.firstname}">
-        <br> <br>
-        <label class="ajust_labels">
-            Last name :
-
-        </label><input type="text" name="lastname" value="${user.lastname}">
-        <br> <br>
-        <label class="ajust_labels">
-            E-mail <span class="mandatory">*</span>:
-
         </label><input type="text" name="email" value="${user.email}">
-        <br> <br>
-        <label class="ajust_labels">
-            Address :
-
-        </label><input type="text" name="address" value="${user.address}">
-        <br> <br>
-        <label class="ajust_labels">
-            Phone number :
-
-        </label> <input type="text" name="phonenumber" value="${user.phonenumber}">
-        <br> <br>
         <br>
         <h2>Change password :</h2>
         <label class="ajust_labels">

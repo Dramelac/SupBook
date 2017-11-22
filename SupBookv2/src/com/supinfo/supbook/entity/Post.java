@@ -5,6 +5,8 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigInteger;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -24,6 +26,12 @@ public class Post {
     @Column
     private Date createAt;
 
+    @Column
+    private int likeCount;
+
+    @Column
+    private int dislike;
+
     @ManyToOne
     @JoinColumn(name = "userID")
     @NotNull
@@ -33,6 +41,12 @@ public class Post {
     @JoinColumn(name = "pageID")
     @NotNull
     private User userPage;
+
+    @OneToMany(mappedBy = "post")
+    private Collection<Comment> comments;
+
+    public Post() {
+    }
 
     public int getId() {
         return id;
@@ -80,5 +94,29 @@ public class Post {
 
     public void setUserPage(User userPage) {
         this.userPage = userPage;
+    }
+
+    public int getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(int likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public int getDislike() {
+        return dislike;
+    }
+
+    public void setDislike(int dislike) {
+        this.dislike = dislike;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Collection<Comment> comments) {
+        this.comments = comments;
     }
 }
