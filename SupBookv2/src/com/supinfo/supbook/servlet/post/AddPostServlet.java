@@ -1,5 +1,6 @@
 package com.supinfo.supbook.servlet.post;
 
+import com.supinfo.supbook.DAL.PostDAO;
 import com.supinfo.supbook.DAL.UserDAO;
 import com.supinfo.supbook.entity.Post;
 import com.supinfo.supbook.entity.User;
@@ -23,6 +24,7 @@ public class AddPostServlet extends HttpServlet {
         post.setCreateAt(new Date());
         post.setUserPage(user);
         post.setUserOwner(user);
+        PostDAO.addPost(post);
         UserDAO.updateUser(user);
         response.sendRedirect(request.getContextPath() + "/index");
 
