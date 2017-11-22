@@ -7,6 +7,7 @@ import com.supinfo.supbook.utils.PersistenceManager;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
@@ -60,6 +61,18 @@ public class UserDAO {
         EntityManager em = PersistenceManager.getEntityManager();
         Query query = em.createQuery("SELECT u FROM User u");
         return (List<User>) query.getResultList();
+    }
+
+    public static List<User> getFriends(User user){
+        EntityManager em = PersistenceManager.getEntityManager();
+        List<User> friends = new ArrayList<>();
+        Query query = em.createQuery("SELECT f.receiver FROM FriendRequest f WHERE f.owner = :user AND f.status = true ");
+        query.setParameter("user", user);
+        friends.addAll((List<User>) query.getResultList());
+        query = em.createQuery("SELECT f.owner FROM FriendRequest f WHERE f.receiver = :user AND f.status = true ");
+        query.setParameter("user", user);
+        friends.addAll((List<User>) query.getResultList());
+        return friends;
     }
 
     public static void removeUserById(int id){
