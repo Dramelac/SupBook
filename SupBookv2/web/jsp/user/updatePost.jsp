@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add Advert</title>
+    <title>Add Post</title>
     <%@ include file="../include/style.jsp" %>
 </head>
 <body>
@@ -10,17 +10,17 @@
 <h1>Editing product : </h1>
 <br>
 <br>
-<form action="updateadvert" method="POST">
-    <input type="hidden" name="id" value="${advert.id}">
+<form action="updatepost" method="POST">
+    <input type="hidden" name="id" value="${post.id}">
     <label class="ajust_labels">
         Name of product :
 
-    </label> <input type="text" name="advertname" value="${advert.name}">
+    </label> <input type="text" name="postname" value="${post.name}">
     <br><br>
     <label class="ajust_labels">
         Its description :
 
-    </label> <input type="text" name="description" value="${advert.description}">
+    </label> <input type="text" name="description" value="${post.description}">
     <br><br>
     <label class="ajust_labels">
         Categorie :
@@ -37,14 +37,14 @@
     <label class="ajust_labels">
         Image url :
 
-    </label> <input type="text" name="image" value="${advert.imageUrl}">
+    </label> <input type="text" name="image" value="${post.imageUrl}">
     <br><br>
     <label class="ajust_labels">
         Its price :
 
-    </label> <input type="text" name="price" value="${advert.price}">
+    </label> <input type="text" name="price" value="${post.price}">
     <br><br>
-    <input type="submit" value="Update advert" class="button">
+    <input type="submit" value="Update post" class="button">
 </form>
 </div>
 

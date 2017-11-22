@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Advert Manager</title>
+    <title>Post Manager</title>
     <%@ include file="include/style.jsp" %>
 </head>
 <body>
@@ -14,18 +14,18 @@
 
 <c:if test="${fn:length(resultList) > 0}">
     <c:forEach var="a" items="${resultList}">
-        <div class="advertIndex col-md-12">
+        <div class="postIndex col-md-12">
             <a href="<%=request.getContextPath()%>/view?id=${a.id}">
-                <div class="advertName">
+                <div class="postName">
                         ${a.name}
                 </div>
                 <div class="row">
                     <div class="col-md-offset-1 col-md-7">
                         <c:if test="${not empty a.imageUrl}">
-                            <img src="${a.imageUrl}" class="imageadvert">
+                            <img src="${a.imageUrl}" class="imagepost">
                         </c:if>
                         <c:if test="${empty a.imageUrl}">
-                            <img src="<%=request.getContextPath()%>/img/no-img.png" class="imageadvert">
+                            <img src="<%=request.getContextPath()%>/img/no-img.png" class="imagepost">
                         </c:if>
                     </div>
                     <div class="col-md-offset-1 col-md-3">

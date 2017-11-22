@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Advert implements Serializable{
+public class Post implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -35,7 +35,7 @@ public class Advert implements Serializable{
     @JoinColumn(name="user_fk")
     private User owner;
 
-    public Advert() {
+    public Post() {
     }
 
     public int getId() {return id;}

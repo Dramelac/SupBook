@@ -36,12 +36,12 @@ public class User implements Serializable{
     private boolean isAdmin;
 
     @OneToMany(mappedBy="owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-    private List<Advert> adverts;
+    private List<Post> posts;
 
     public User() {
     }
 
-    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber, boolean isAdmin, List<Advert> adverts) {
+    public User(String username, String password, String firstname, String lastname, String email, String address, String phonenumber, boolean isAdmin, List<Post> posts) {
         this.username = username;
         this.password = password;
         this.firstname = firstname;
@@ -50,7 +50,7 @@ public class User implements Serializable{
         this.address = address;
         this.phonenumber = phonenumber;
         this.isAdmin = isAdmin;
-        this.adverts = adverts;
+        this.posts = posts;
     }
 
     public int getId() {
@@ -123,8 +123,8 @@ public class User implements Serializable{
         isAdmin = admin;
     }
 
-    public List<Advert> getAdverts() {return adverts;}
+    public List<Post> getPosts() {return posts;}
 
-    public void setAdverts(List<Advert> adverts) {this.adverts = adverts;}
+    public void setPosts(List<Post> posts) {this.posts = posts;}
 
 }

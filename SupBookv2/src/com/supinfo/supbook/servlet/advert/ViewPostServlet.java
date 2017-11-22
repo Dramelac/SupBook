@@ -1,8 +1,8 @@
-package com.supinfo.supbook.servlet.advert;
+package com.supinfo.supbook.servlet.post;
 
-import com.supinfo.supbook.DAL.AdvertDAO;
+import com.supinfo.supbook.DAL.PostDAO;
 import com.supinfo.supbook.DAL.UserDAO;
-import com.supinfo.supbook.entity.Advert;
+import com.supinfo.supbook.entity.Post;
 import com.supinfo.supbook.entity.User;
 import com.supinfo.supbook.utils.EmailUtility;
 import javassist.NotFoundException;
@@ -14,15 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ViewAdvertServlet", urlPatterns = "/view")
-public class ViewAdvertServlet extends HttpServlet {
+@WebServlet(name = "ViewPostServlet", urlPatterns = "/view")
+public class ViewPostServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{
-                Advert advert = AdvertDAO.getAdvertById(Integer.parseInt(request.getParameter("id")));
+                Post post = PostDAO.getPostById(Integer.parseInt(request.getParameter("id")));
 
                 User senderuser = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
-                String recipient = advert.getOwner().getEmail();
+                String recipient = post.getOwner().getEmail();
                 String subject = senderuser.getEmail() + " from SupBook sent you a message";
                 String content = request.getParameter("email_content");
 
@@ -35,7 +35,7 @@ public class ViewAdvertServlet extends HttpServlet {
                     request.setAttribute("message_mail", "There were an error.");
                     request.setAttribute("failed_mail", true);
                 } finally {
-                    getServletContext().getRequestDispatcher("/jsp/viewAdvert.jsp").forward(request, response);
+                    getServletContext().getRequestDispatcher("/jsp/viewPost.jsp").forward(request, response);
                 }
         } catch (Exception e){
             response.sendError(404);
@@ -44,17 +44,17 @@ public class ViewAdvertServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            Advert advert = AdvertDAO.getAdvertById(Integer.parseInt(request.getParameter("id")));
-            if (advert == null){
-                throw new NotFoundException("Advert no found");
+            Post post = PostDAO.getPostById(Integer.parseInt(request.getParameter("id")));
+            if (post == null){
+                throw new NotFoundException("Post no found");
             }
             Object userId = request.getSession().getAttribute("userId");
-            if (userId != null && userId.equals(advert.getOwner().getId())){
+            if (userId != null && userId.equals(post.getOwner().getId())){
                 request.setAttribute("isOwner", true);
             }
-            request.setAttribute("advert", advert);
-            request.setAttribute("owner", advert.getOwner());
-            request.getRequestDispatcher("/jsp/viewAdvert.jsp").forward(request, response);
+            request.setAttribute("post", post);
+            request.setAttribute("owner", post.getOwner());
+            request.getRequestDispatcher("/jsp/viewPost.jsp").forward(request, response);
         } catch (Exception e){
             response.sendError(404);
         }

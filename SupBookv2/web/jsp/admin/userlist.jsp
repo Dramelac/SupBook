@@ -11,8 +11,8 @@
 
 
     <c:forEach var="u" items="${userList}">
-    <div class="advertIndex">
-        <div class="advertName" <c:if test="${u.isAdmin}">style="color: red"</c:if>>${u.username} </div>
+    <div class="postIndex">
+        <div class="postName" <c:if test="${u.isAdmin}">style="color: red"</c:if>>${u.username} </div>
         <a href="<%=request.getContextPath()%>/admin/removeuser?id=${u.id}" class="button_style2">Remove</a> |
 
         <c:if test="${u.isAdmin}">

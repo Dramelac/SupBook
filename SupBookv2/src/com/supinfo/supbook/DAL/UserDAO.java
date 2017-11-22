@@ -1,6 +1,6 @@
 package com.supinfo.supbook.DAL;
 
-import com.supinfo.supbook.entity.Advert;
+import com.supinfo.supbook.entity.Post;
 import com.supinfo.supbook.entity.User;
 import com.supinfo.supbook.utils.PersistenceManager;
 

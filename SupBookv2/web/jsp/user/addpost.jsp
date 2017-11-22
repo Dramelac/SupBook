@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add Advert</title>
+    <title>Add Post</title>
     <%@ include file="../include/style.jsp" %>
 </head>
 <body>
@@ -10,11 +10,11 @@
 <h1>Hello ${username}, what do you want to add?</h1>
 <br>
 <br>
-<form action="addadvert" method="POST">
+<form action="addpost" method="POST">
     <label class="ajust_labels">
         Name of product :
 
-    </label> <input type="text" name="advertname">
+    </label> <input type="text" name="postname">
     <br><br>
     <label class="ajust_labels">
         Its description :
@@ -43,7 +43,7 @@
     </label> <input type="text" name="price">
         €
     <br><br>
-    <input type="submit" value="Add advert" class="button">
+    <input type="submit" value="Add post" class="button">
 </form>
 </div>
 
