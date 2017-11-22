@@ -151,29 +151,6 @@ body{
     margin-top: 30px;
 }
 
-.categories{
-    list-style-type: none;
-    background-color: #060621;
-    border: none;
-    color: white;
-    width: 200px;
-    height: 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 5px;
-    margin-left: 0px;
-    text-decoration: none;
-    color: white;
-}
-
-.categories a:link,.categories a:active,.categories a:hover,.categories a:visited{
-    text-decoration: none;
-    color: white;
-
-}
-
 
 h5{
     text-align: center;

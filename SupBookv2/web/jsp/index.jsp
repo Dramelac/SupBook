@@ -35,8 +35,6 @@
                             </c:if>
                         </div>
                         <div class="row col-md-12">
-                            <p>Categorie : ${a.categorie} </p>
-                            <p>Price : ${a.price} €</p>
                             <p>Date : ${a.publishDate} </p>
                         </div>
                         <br>
