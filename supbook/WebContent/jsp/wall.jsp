@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="listActualité">
     <h1>Les dernières actualité</h1>
-    <c:forEach var="p" items="${lastPost}">
+    <c:forEach var="p" items="${posts}">
         <hr>
         <div id="post">
             <div class="titreannonce">

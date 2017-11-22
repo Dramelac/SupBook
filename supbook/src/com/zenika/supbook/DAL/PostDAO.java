@@ -59,7 +59,7 @@ public class PostDAO {
 
     public static  List<Post> getPostByPageId(User page){
         EntityManager em = PersistenceManager.getEntityManager();
-        Query query = em.createQuery("SELECT * FROM Post p WHERE p.userPage = :page");
+        Query query = em.createQuery("SELECT p FROM Post p WHERE p.userPage = :page");
         query.setParameter("page", page);
         return (List<Post>) query.getResultList();
     }
