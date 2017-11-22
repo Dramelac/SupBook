@@ -22,15 +22,17 @@
             <c:forEach var="a" items="${list}">
 
                 <div class="postIndex col-md-12">
-                    <div class="row col-md-offset-1 col-md-10">
-                        <c:if test="${not empty a.image}">
-                            <img src="${a.image}" class="imagepost">
-                        </c:if>
-                        <c:if test="${empty a.image}">
-                            <img src="<%=request.getContextPath()%>/img/no-img.png" class="imagepost">
-                        </c:if>
-                        <p>${a.content}</p>
-                    </div>
+                    <a href="/view?id=${a.id}">
+                        <div class="row col-md-offset-1 col-md-10">
+                            <c:if test="${not empty a.image}">
+                                <img src="${a.image}" class="imagepost">
+                            </c:if>
+                            <c:if test="${empty a.image}">
+                                <img src="<%=request.getContextPath()%>/img/no-img.png" class="imagepost">
+                            </c:if>
+                            <p>${a.content}</p>
+                        </div>
+                    </a>
                     <div class="row col-md-12">
                         <p>Date : ${a.createAt} </p>
                     </div>
