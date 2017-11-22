@@ -65,6 +65,7 @@ public class UserDAO {
     public static List<User> getAllLike(String inputName){
         EntityManager em = PersistenceManager.getEntityManager();
         Query query = em.createQuery("SELECT u FROM User u where u.username Like :inputName ");
+        query.setParameter("inputName", "%"+inputName+"%");
         return (List<User>) query.getResultList();
     }
 
