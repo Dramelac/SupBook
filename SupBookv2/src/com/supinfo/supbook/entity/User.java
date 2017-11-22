@@ -24,7 +24,7 @@ public class User implements Serializable{
     @Column(unique=false)
     private boolean isAdmin;
 
-    @Column(unique = true)
+    @Column
     private Date birthday;
 
     @OneToMany(mappedBy = "userOwner")
