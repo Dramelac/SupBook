@@ -16,11 +16,9 @@
         <c:forEach var="a" items="${resultList}">
             <div class="advertIndex col-md-12">
                 <a href="<%=request.getContextPath()%>/view?id=${a.id}">
-                    <div class="userlist">
-                            ${a.username}
-                    </div>
-                    <br>
+                    <p>${a.username}</p>
                 </a>
+                <a href="<%=request.getContextPath()%>/user/friendrequest?id=${a.id}">Friend request</a>
             </div>
         </c:forEach>
     </c:if>
