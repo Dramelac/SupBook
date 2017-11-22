@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <title>SUPbook : the online student directory</title>
@@ -11,6 +12,12 @@
 				style="padding-left: 20px; padding-right: 20px;" /></td>
 			<td valign="top"><h1>BackOffice SUPBook</h1> <jsp:include
 					page="/jsp/messageBar.jsp" />
+
+				<c:if test="${failed}">
+					<div class="alert alert-danger">
+						<strong>Failed!</strong> ${message}
+					</div>
+				</c:if>
 				<form action="<%=request.getContextPath()%>/register" method="POST">
 					<table style="width: 250; border: 1px">
 						<tr>

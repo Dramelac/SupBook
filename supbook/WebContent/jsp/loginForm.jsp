@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <title>SUPbook : the online student directory</title>
@@ -30,6 +31,12 @@
 						</tr>
 					</table>
 				</form>
+
+				<c:if test="${failed}">
+					<div class="alert alert-danger">
+						<strong>Failed!</strong> Your details are incorrect. Please try again.
+					</div>
+				</c:if>
 			</td>
 		</tr>
 	</table>
