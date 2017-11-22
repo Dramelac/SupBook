@@ -1,7 +1,7 @@
-package com.supinfo.supbook.servlet.advert;
+package com.supinfo.supbook.servlet.post;
 
-import com.supinfo.supbook.DAL.AdvertDAO;
-import com.supinfo.supbook.entity.Advert;
+import com.supinfo.supbook.DAL.PostDAO;
+import com.supinfo.supbook.entity.Post;
 import com.supinfo.supbook.entity.Categorie;
 
 import javax.servlet.ServletException;
@@ -21,12 +21,12 @@ public class SearchTextServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String txt = request.getParameter("q");
-        List<Advert> result = null;
+        List<Post> result = null;
         try {
             Categorie categorie = Categorie.valueOf(txt);
-            result = AdvertDAO.searchByCategorie(categorie);
+            result = PostDAO.searchByCategorie(categorie);
         } catch (IllegalArgumentException e){
-            result = AdvertDAO.searchFullText(txt);
+            result = PostDAO.searchFullText(txt);
         }
         request.setAttribute("resultList", result);
         request.setAttribute("filter", txt);

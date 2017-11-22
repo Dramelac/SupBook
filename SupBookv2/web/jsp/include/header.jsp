@@ -9,8 +9,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <c:if test="${not empty username}">
-                    <li><a href="<%=request.getContextPath()%>/user/addadvert"><p class="buttons_header">Add advert</p></a></li>
-                    <li><a href="<%=request.getContextPath()%>/user/advertmanager"><p class="buttons_header">Advert manager</p></a></li>
+                    <li><a href="<%=request.getContextPath()%>/user/addpost"><p class="buttons_header">Add post</p></a></li>
+                    <li><a href="<%=request.getContextPath()%>/user/postmanager"><p class="buttons_header">Post manager</p></a></li>
 
                     <c:if test="${isAdmin}">
                         <li><a href="<%=request.getContextPath()%>/admin/"><p class="buttons_header">Admin panel</p></a></li>

@@ -1,7 +1,7 @@
-package com.supinfo.supbook.servlet.advert;
+package com.supinfo.supbook.servlet.post;
 
 import com.supinfo.supbook.DAL.UserDAO;
-import com.supinfo.supbook.entity.Advert;
+import com.supinfo.supbook.entity.Post;
 import com.supinfo.supbook.entity.Categorie;
 import com.supinfo.supbook.entity.User;
 
@@ -14,23 +14,23 @@ import java.io.IOException;
 import java.util.Date;
 
 
-@WebServlet(name = "AddAdvertServlet",urlPatterns = "/user/addadvert")
-public class AddAdvertServlet extends HttpServlet {
+@WebServlet(name = "AddPostServlet",urlPatterns = "/user/addpost")
+public class AddPostServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
-        Advert advert = new Advert();
-        advert.setName(request.getParameter("advertname"));
-        advert.setImageUrl(request.getParameter("image"));
-        advert.setDescription(request.getParameter("description"));
+        Post post = new Post();
+        post.setName(request.getParameter("postname"));
+        post.setImageUrl(request.getParameter("image"));
+        post.setDescription(request.getParameter("description"));
         if (!request.getParameter("categorie").isEmpty()){
-            advert.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
+            post.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
         } else {
-            advert.setCategorie(Categorie.Other);
+            post.setCategorie(Categorie.Other);
         }
-        advert.setPublishDate(new Date());
-        advert.setPrice(Double.parseDouble(request.getParameter("price")));
-        advert.setOwner(user);
-        user.getAdverts().add(advert);
+        post.setPublishDate(new Date());
+        post.setPrice(Double.parseDouble(request.getParameter("price")));
+        post.setOwner(user);
+        user.getPosts().add(post);
         UserDAO.updateUser(user);
         response.sendRedirect(request.getContextPath() + "/index");
 
@@ -39,6 +39,6 @@ public class AddAdvertServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("categorieList", Categorie.CategorieList);
 
-        request.getRequestDispatcher("/jsp/user/addadvert.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/user/addpost.jsp").forward(request, response);
     }
 }

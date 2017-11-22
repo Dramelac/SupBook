@@ -60,30 +60,30 @@ body{
     display: block;
 }
 
-.imageadvert{
+.imagepost{
     max-width: 600px;
     max-height: 400px;
     margin: auto;
     horiz-align: center;
 }
 
-.advertIndex{
+.postIndex{
     border-radius: 10px;
     background-color: rgba(97, 131, 158, 0.26);
     padding: 5px;
     margin: 3px;
 }
 
-.advertIndex p{
+.postIndex p{
     font-weight: bold;
 }
 
-.advertIndex a, .advertIndex a:hover{
+.postIndex a, .postIndex a:hover{
     color: black;
     text-decoration: none;
 }
 
-.advertName {
+.postName {
     background-color: rgba(0, 128, 0, 0.50);
     border-radius: 10px;
     font-size: 20px;

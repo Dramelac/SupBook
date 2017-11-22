@@ -12,7 +12,7 @@
     <div class="text_index row">
         <img src="<c:url value="/img/logo.png" />" class="col-md-2 logo"/>
         <div class="col-md-offset-1 col-md-8">
-            <p>Actualy they are ${userCount} users and ${advertCount} ads online !</p>
+            <p>Actualy they are ${userCount} users and ${postCount} ads online !</p>
         </div>
     </div>
 
@@ -29,17 +29,17 @@
         <div class="col-md-offset-1 col-md-9">
             <c:forEach var="a" items="${list}">
 
-                <div class="advertIndex col-md-12">
+                <div class="postIndex col-md-12">
                     <a href="<%=request.getContextPath()%>/view?id=${a.id}">
-                        <div class="advertName">
+                        <div class="postName">
                             ${a.name}
                         </div>
                         <div class="row col-md-offset-1 col-md-10">
                             <c:if test="${not empty a.imageUrl}">
-                                <img src="${a.imageUrl}" class="imageadvert">
+                                <img src="${a.imageUrl}" class="imagepost">
                             </c:if>
                             <c:if test="${empty a.imageUrl}">
-                                <img src="<%=request.getContextPath()%>/img/no-img.png" class="imageadvert">
+                                <img src="<%=request.getContextPath()%>/img/no-img.png" class="imagepost">
                             </c:if>
                         </div>
                         <div class="row col-md-12">

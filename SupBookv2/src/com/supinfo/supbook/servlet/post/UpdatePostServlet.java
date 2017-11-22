@@ -1,7 +1,7 @@
-package com.supinfo.supbook.servlet.advert;
+package com.supinfo.supbook.servlet.post;
 
-import com.supinfo.supbook.DAL.AdvertDAO;
-import com.supinfo.supbook.entity.Advert;
+import com.supinfo.supbook.DAL.PostDAO;
+import com.supinfo.supbook.entity.Post;
 import com.supinfo.supbook.entity.Categorie;
 import javassist.NotFoundException;
 
@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "UpdateAdvertServlet", urlPatterns = "/user/updateadvert")
-public class UpdateAdvertServlet extends HttpServlet {
+@WebServlet(name = "UpdatePostServlet", urlPatterns = "/user/updatepost")
+public class UpdatePostServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Advert advert = null;
+        Post post = null;
         int id = Integer.parseInt(request.getParameter("id"));
         try {
-            advert = AdvertDAO.getAndCheck(id,
+            post = PostDAO.getAndCheck(id,
                     (int) request.getSession().getAttribute("userId"));
         } catch (NotFoundException e){
             response.sendError(404);
@@ -28,24 +28,24 @@ public class UpdateAdvertServlet extends HttpServlet {
             response.sendError(403);
             return;
         }
-        advert.setName(request.getParameter("advertname"));
-        advert.setImageUrl(request.getParameter("image"));
-        advert.setDescription(request.getParameter("description"));
+        post.setName(request.getParameter("postname"));
+        post.setImageUrl(request.getParameter("image"));
+        post.setDescription(request.getParameter("description"));
         String cat = request.getParameter("categorie");
         if (!cat.isEmpty()){
-            advert.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
+            post.setCategorie(Categorie.valueOf(request.getParameter("categorie")));
         }
-        advert.setPrice(Double.parseDouble(request.getParameter("price")));
-        AdvertDAO.updateAdvert(advert);
+        post.setPrice(Double.parseDouble(request.getParameter("price")));
+        PostDAO.updatePost(post);
 
         response.sendRedirect(request.getContextPath() + "/view?id=" + id);
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Advert advert = null;
+        Post post = null;
         try {
-            advert = AdvertDAO.getAndCheck(Integer.parseInt(request.getParameter("id")),
+            post = PostDAO.getAndCheck(Integer.parseInt(request.getParameter("id")),
                     (int) request.getSession().getAttribute("userId"));
         } catch (NotFoundException e){
             response.sendError(404);
@@ -55,8 +55,8 @@ public class UpdateAdvertServlet extends HttpServlet {
             return;
         }
         request.setAttribute("categorieList", Categorie.CategorieList);
-        request.setAttribute("advert", advert);
+        request.setAttribute("post", post);
 
-        request.getRequestDispatcher("/jsp/user/updateAdvert.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/user/updatePost.jsp").forward(request, response);
     }
 }
