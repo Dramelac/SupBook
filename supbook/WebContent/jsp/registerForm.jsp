@@ -45,7 +45,7 @@
 						</tr>
 					</table>
 				</form>
-				<a href="<%=request.getContextPath()%>/register">Login</a>
+				<a href="<%=request.getContextPath()%>/login">Login</a>
 			</td>
 		</tr>
 	</table>
