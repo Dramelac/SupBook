@@ -11,6 +11,15 @@ import java.util.List;
 
 public class PostDAO {
 
+    public static void addPost(Post post) {
+        EntityManager em = PersistenceManager.getEntityManager();
+        EntityTransaction et = em.getTransaction();
+        et.begin();
+        em.persist(post);
+        et.commit();
+        em.close();
+    }
+
     public static void updatePost(Post post){
         EntityManager em = PersistenceManager.getEntityManager();
         EntityTransaction et = em.getTransaction();
