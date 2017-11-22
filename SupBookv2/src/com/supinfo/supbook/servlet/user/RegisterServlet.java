@@ -25,7 +25,7 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordverif = request.getParameter("passwordverif");
-        String birthday = request.getParameter("birthdate");
+        String birthday = request.getParameter("birthday");
 
         if (username.isEmpty() || password.isEmpty() || passwordverif.isEmpty() || email.isEmpty() || birthday.isEmpty()){
             request.setAttribute("failed", true);
@@ -57,7 +57,7 @@ public class RegisterServlet extends HttpServlet {
         user.setEmail(email);
         user.setUsername(username);
 
-        final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         try{
             final Date date = dateFormat.parse(birthday);
