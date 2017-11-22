@@ -2,4 +2,4 @@
 
 <p align="center"><a href="<%=request.getContextPath()%>/private/user/displayUsers.jsp">Users</a></p>
 
-<p align="center"><a href="<%=request.getContextPath()%>/private/logout.jsp">Logout</a></p>
+<p align="center"><a href="<%=request.getContextPath()%>/>Logout</a></p>
