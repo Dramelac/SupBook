@@ -37,6 +37,10 @@
                         <p>Date : ${a.createAt} </p>
                     </div>
                     <c:if test="${not empty username}">
+                        <a href="<%=request.getContextPath()%>/user/postlike?id=${a.id}&action=like">Like : ${a.likeCount}</a>
+                        <a href="<%=request.getContextPath()%>/user/postlike?id=${a.id}&action=dislike">Dislike : ${a.dislikeCount}</a>
+                    </c:if>
+                    <c:if test="${not empty username}">
                         <div class="row col-md-12">
                             <form class="commentForm">
                                 <input type="hidden" name="postId" value="${a.id}">

@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -26,11 +27,12 @@ public class Post {
     @Column
     private Date createAt;
 
-    @Column
+    @OneToMany(mappedBy = "post")
+    private List<PostLike> like;
+
     private int likeCount;
 
-    @Column
-    private int dislike;
+    private int dislikeCount;
 
     @ManyToOne
     @JoinColumn(name = "userID")
@@ -96,6 +98,22 @@ public class Post {
         this.userPage = userPage;
     }
 
+    public Collection<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Collection<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public List<PostLike> getLike() {
+        return like;
+    }
+
+    public void setLike(List<PostLike> like) {
+        this.like = like;
+    }
+
     public int getLikeCount() {
         return likeCount;
     }
@@ -104,19 +122,11 @@ public class Post {
         this.likeCount = likeCount;
     }
 
-    public int getDislike() {
-        return dislike;
+    public int getDislikeCount() {
+        return dislikeCount;
     }
 
-    public void setDislike(int dislike) {
-        this.dislike = dislike;
-    }
-
-    public Collection<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(Collection<Comment> comments) {
-        this.comments = comments;
+    public void setDislikeCount(int dislikeCount) {
+        this.dislikeCount = dislikeCount;
     }
 }
