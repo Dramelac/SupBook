@@ -20,7 +20,7 @@ public class CommentDAO {
 
     public static List<Comment> getCommentsForPost(int postId){
         EntityManager em = PersistenceManager.getEntityManager();
-        Query query = em.createQuery("SELECT c FROM Comment c WHERE c.post=" + postId + " ORDER BY c.id DESC");
+        Query query = em.createQuery("SELECT c FROM Comment c WHERE c.post=" + postId + " ORDER BY c.id ASC");
         List<Comment> comments = (List<Comment>)query.getResultList();
         return comments;
     }
