@@ -11,6 +11,35 @@
       <root url="jar://$PROJECT_DIR$/lib/hibernate-core-5.2.3.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javax.persistence.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/antlr-2.7.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/cdi-api-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/classmate-1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-collections-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-adapters-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-api-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/dsn.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/el-api-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/geronimo-jta_1.1_spec-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/gimap.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/imap.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jandex-2.0.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jbcrypt-0.3m.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsr250-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jstl-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jstl-impl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jta-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mailapi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.34-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/pop3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-jdk14-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/smtp.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
