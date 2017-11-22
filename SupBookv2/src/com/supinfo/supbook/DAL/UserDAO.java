@@ -61,6 +61,11 @@ public class UserDAO {
         Query query = em.createQuery("SELECT u FROM User u");
         return (List<User>) query.getResultList();
     }
+    public static List<User> getAllLike(String inputName){
+        EntityManager em = PersistenceManager.getEntityManager();
+        Query query = em.createQuery("SELECT u FROM User u where u.username Like :inputName ");
+        return (List<User>) query.getResultList();
+    }
 
     public static void removeUserById(int id){
         EntityManager em = PersistenceManager.getEntityManager();
