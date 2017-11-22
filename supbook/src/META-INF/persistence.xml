@@ -4,9 +4,9 @@
     <persistence-unit name="PersistenceUnit">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://10.31.18.177:3306/supsale"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://10.31.18.177:3306/supbook"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.username" value="supsale"/>
+            <property name="hibernate.connection.username" value="supbook"/>
             <property name="hibernate.connection.password" value="fakepassword"/>
             <property name="hibernate.archive.autodetection" value="class, hbm"/>
             <property name="hibernate.show_sql" value="true"/>
