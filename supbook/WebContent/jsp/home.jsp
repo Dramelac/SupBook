@@ -36,22 +36,24 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Publication</h4>
-			</div>
-			<!--intégration fichier -->
-			<div class="form-group">
-				<label for="exampleInputFile">File input</label>
-				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-			</div>
-			<div class="form-group">
-				<textarea class="form-control" rows="5" id="comment"></textarea>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-				<button type="button" class="btn btn-primary"onClick="history.go(0)" VALUE="Refresh">Publier</button>
-			</div>
+            <form action="/post/submit" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Publication</h4>
+                </div>
+                <!--intégration fichier -->
+                <div class="form-group">
+                    <label for="imageInput">File input</label>
+                    <input type="text" class="form-control-file" name="image" id="imageInput" aria-describedby="fileHelp">
+                </div>
+                <div class="form-group">
+                    <textarea name="content" class="form-control" rows="5" id="comment"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <input type="submit" class="btn btn-primary" data-dismiss="modal" value="Publier">
+                </div>
+            </form>
 		</div>
 	</div>
 </div>
