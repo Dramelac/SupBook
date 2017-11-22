@@ -5,3 +5,4 @@ out
 .idea/dataSources/
 !WebContent/WEB-INF/lib/*.jar
 build/
+.idea/workspace.xml

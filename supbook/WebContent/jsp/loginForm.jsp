@@ -36,7 +36,15 @@
 						</tr>
 					</table>
 				</form>
+
+				<c:if test="${failed}">
+					<div class="alert alert-danger">
+						<strong>Failed!</strong> Your details are incorrect. Please try again.
+					</div>
+				</c:if>
+
 				<a href="<%=request.getContextPath()%>/register">Not registered ?</a>
+
 			</td>
 		</tr>
 	</table>
