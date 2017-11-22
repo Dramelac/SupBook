@@ -18,6 +18,7 @@
 				<button type="button">Search</button>
 			</form>
 		</td>
+		<a href="<%= request.getContextPath() %>/user/logout">Logout</a>
 	</tr>
 </table>
 </body>
