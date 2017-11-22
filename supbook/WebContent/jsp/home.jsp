@@ -55,17 +55,21 @@
 		</div>
 	</div>
 </div>
-
 <div class="modal-footer" id="mur">
 	<textarea id="texte"></textarea>
 
 	<input type="submit" value="Tester !" onclick="javascript:emule(document.getElementById('texte').value);" />
 </div>
 
+
 <script>
 
 	//reload textarea
 	$('#myModal').on('comment.bs.modal', function (e) {
 		if (!data) return e.preventDefault() // stops modal from being shown
+		else
+		{
+
+		}
 	})
 </script>
