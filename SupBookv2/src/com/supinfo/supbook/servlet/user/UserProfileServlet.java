@@ -47,11 +47,7 @@ public class UserProfileServlet extends HttpServlet {
         }
 
         User user = UserDAO.getUserById((int) request.getSession().getAttribute("userId"));
-        user.setFirstname(request.getParameter("firstname"));
-        user.setLastname(request.getParameter("lastname"));
         user.setEmail(email);
-        user.setAddress(request.getParameter("address"));
-        user.setPhonenumber(request.getParameter("phonenumber"));
 
         if (!password.isEmpty()){
             if (SecurityUtils.checkPassword(request.getParameter("old_password"), user.getPassword())) {
