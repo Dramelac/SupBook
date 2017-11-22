@@ -27,7 +27,13 @@
         <div class="row col-md-offset-1">
             <p>${post.content}</p>
         </div>
-
+        <c:if test="${not empty comments}">
+            <div class="row col-md-offset-1">
+            <c:forEach var="c" items="${comments}">
+                <p>${c.content}</p>
+            </c:forEach>
+            </div>
+        </c:if>
         <br>
 
 

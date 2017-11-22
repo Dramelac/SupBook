@@ -1,7 +1,9 @@
 package com.supinfo.supbook.servlet.post;
 
+import com.supinfo.supbook.DAL.CommentDAO;
 import com.supinfo.supbook.DAL.PostDAO;
 import com.supinfo.supbook.DAL.UserDAO;
+import com.supinfo.supbook.entity.Comment;
 import com.supinfo.supbook.entity.Post;
 import com.supinfo.supbook.entity.User;
 import com.supinfo.supbook.utils.EmailUtility;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "ViewPostServlet", urlPatterns = "/view")
 public class ViewPostServlet extends HttpServlet {
@@ -52,7 +55,9 @@ public class ViewPostServlet extends HttpServlet {
             if (userId != null && userId.equals(post.getUserOwner().getId())){
                 request.setAttribute("isOwner", true);
             }
+            List<Comment> comments = CommentDAO.getCommentsForPost(Integer.parseInt(request.getParameter("id")));
             request.setAttribute("post", post);
+            request.setAttribute("comments", comments);
             request.setAttribute("owner", post.getUserOwner());
             request.getRequestDispatcher("/jsp/viewPost.jsp").forward(request, response);
         } catch (Exception e){
