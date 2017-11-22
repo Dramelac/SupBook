@@ -73,10 +73,6 @@ public class RegisterServlet extends HttpServlet {
     }
 
     private void redirectToForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("firstname", request.getParameter("firstname"));
-        request.setAttribute("lastname", request.getParameter("lastname"));
-        request.setAttribute("address", request.getParameter("address"));
-        request.setAttribute("phonenumber", request.getParameter("phonenumber"));
         request.setAttribute("username", request.getParameter("username"));
         request.setAttribute("email", request.getParameter("email"));
         doGet(request, response);
