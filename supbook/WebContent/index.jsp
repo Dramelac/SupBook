@@ -1,1 +1,1 @@
-<% response.sendRedirect(request.getContextPath() + "/public/"); %>
+<% response.sendRedirect(request.getContextPath() + "/index"); %>

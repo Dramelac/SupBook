@@ -36,4 +36,5 @@ CREATE TABLE `FRIENDREQUEST`(
 
 ALTER TABLE `FRIENDREQUEST` ADD CONSTRAINT uc_OR UNIQUE (`OwnerID`,`ReceiverID`);
 
+
 INSERT INTO `USER` VALUES(1, 'toto', 'toto', 'toto@toto.com', 1);

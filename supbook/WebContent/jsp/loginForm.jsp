@@ -10,8 +10,8 @@
 			<td valign="top"><img src="../images/logo.png"
 				style="padding-left: 20px; padding-right: 20px;" /></td>
 			<td valign="top"><h1>BackOffice SUPBook</h1> <jsp:include
-					page="/private/messageBar.jsp" />
-				<form action="<%=request.getContextPath()%>/private/login.jsp"
+					page="/jsp/messageBar.jsp" />
+				<form action="<%=request.getContextPath()%>/login"
 					method="POST">
 					<table style="width: 250; border: 1px">
 						<tr>
